@@ -9,12 +9,23 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Router from './src/Router' ;
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './src/components/reducers' ;
+
 
 type Props = {};
+
+
 export default class App extends Component<Props> {
+
+  store = createStore(reducers);
+
   render() {
     return (
-      <Router />
+      <Provider store={this.store}>
+        <Router />
+      </Provider>
     );
   }
 }

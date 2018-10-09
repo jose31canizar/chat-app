@@ -1,6 +1,6 @@
 import React from 'react' ;
 import { createStackNavigator } from 'react-navigation';
-import { Auth } from './components/screens';
+import { Auth, Contacts } from './components/screens';
 
 class Router extends React.Component {
   render(){
@@ -13,9 +13,8 @@ class Router extends React.Component {
 
 const RootNavigator = createStackNavigator(
   {
-    Auth:{
-      screen:Auth
-    },
+    Auth:{ screen:Auth },
+    Contacts:{ screen:Contacts },
   },
   {
     headerMode: 'none',
